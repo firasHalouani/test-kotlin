@@ -1,0 +1,15 @@
+fun main() {
+    val example = VulnerableExample()
+
+    // NullPointerException
+    example.printUserName(mapOf())
+
+    // Command Injection simulée
+    example.runCommand("ls")
+
+    // Secret exposé
+    println(example.getApiKey())
+
+    // Exception possible
+    example.readFile("test.txt")
+}
